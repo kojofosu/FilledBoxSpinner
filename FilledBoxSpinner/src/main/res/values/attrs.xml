@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FilledBoxSpinner">
+        <attr name="hint" format="string"/>
+        <attr name="icon" format="reference"/>
+        <attr name="iconPosition" format="enum">
+            <enum name="start" value="0"/>
+            <enum name="end" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>
