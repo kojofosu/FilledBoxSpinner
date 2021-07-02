@@ -1,13 +1,11 @@
 package com.mcdev.filledboxspinner
 
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.ArrayAdapter
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.mcdev.filledboxspinner.databinding.FilledBoxSpinnerViewBinding
-import java.text.FieldPosition
 
 class FilledBoxSpinner @JvmOverloads constructor(
     context: Context,
@@ -32,7 +30,7 @@ class FilledBoxSpinner @JvmOverloads constructor(
         binding.textInputLayout.hint = hint
     }
 
-    fun setItems(list: List<String>) {
+    fun setItems(list: List<*>) {
         val arrayAdapter = ArrayAdapter(context, R.layout.spinner_item, list)
         binding.autoCompleteTextView.setAdapter(arrayAdapter)
     }

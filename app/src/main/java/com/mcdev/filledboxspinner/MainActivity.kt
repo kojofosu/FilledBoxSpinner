@@ -10,13 +10,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val listItems = arrayListOf<String>()
-        listItems.add("Sine wave")
-        listItems.add("Square wave")
-        listItems.add("Triangle wave")
-        listItems.add("Sawtooth wave")
+        val listItems = arrayListOf<Int>()
+        listItems.add(2)
+        listItems.add(2)
+        listItems.add(2)
+        listItems.add(2)
 
-        filledBoxSpinner = findViewById(R.id.filled_box_spinner)
+        val filledBoxSpinner: FilledBoxSpinner = findViewById(R.id.filled_box_spinner)
         filledBoxSpinner.setItems(listItems)
     }
 }
