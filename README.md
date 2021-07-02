@@ -1,7 +1,8 @@
-# FilledBoxSpinner
+# FilledBoxSpinner 
+![Jit](https://img.shields.io/jitpack/v/github/kojofosu/FilledBoxSpinner?style=for-the-badge) 
+
 :sparkles: Beautiful spinner library for your android projects.
 
-![Jit](https://img.shields.io/jitpack/v/github/kojofosu/FilledBoxSpinner?style=for-the-badge)
 
 ## Setup
 
