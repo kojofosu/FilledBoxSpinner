@@ -48,6 +48,17 @@ Sample implementation [here](app/)
        val filledBoxSpinner: FilledBoxSpinner = findViewById(R.id.filled_box_spinner)
        filledBoxSpinner.setItems(listItems)
 ```
+- Implement `OnItemSelectedListener` 
+```kotlin
+       filledBoxSpinner.setOnItemSelectedListener(object : OnItemSelectedListener {
+           override fun onItemSelected(itemValue: String) {
+                //write your logic
+           }
+
+       })
+```
+### Credit
+This library was inspired by [Stevdza-San](https://youtu.be/741l_fPKL3Y)
 
 ### Licensed under the [MIT License](LICENSE)
 
