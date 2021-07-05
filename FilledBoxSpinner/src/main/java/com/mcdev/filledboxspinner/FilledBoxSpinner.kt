@@ -86,4 +86,8 @@ class FilledBoxSpinner @JvmOverloads constructor(
     fun getSelectedItem(): String {
         return mItemSelected!!
     }
+
+    fun setError(message: String) {
+        binding.textInputLayout.error = message
+    }
 }
