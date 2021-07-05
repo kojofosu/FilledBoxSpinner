@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -32,9 +33,11 @@ class FilledBoxSpinner @JvmOverloads constructor(
         val hint = attributes.getString(R.styleable.FilledBoxSpinner_hint)
         val spinnerIcon = attributes.getResourceId(R.styleable.FilledBoxSpinner_icon, 0)
         val iconPosition = attributes.getInt(R.styleable.FilledBoxSpinner_iconPosition, 0)
+        val searchable = attributes.getBoolean(R.styleable.FilledBoxSpinner_isSearchable, false)
 
         setSpinnerIcon(spinnerIcon, iconPosition)
         setHint(hint)
+        isSearchable(searchable)
 
         binding.autoCompleteTextView.setOnItemClickListener(object: AdapterView.OnItemClickListener{
             override fun onItemClick(
@@ -89,5 +92,11 @@ class FilledBoxSpinner @JvmOverloads constructor(
 
     fun setError(message: String) {
         binding.textInputLayout.error = message
+    }
+
+    fun isSearchable(searchable: Boolean) {
+        when (searchable) {
+            true -> binding.autoCompleteTextView.inputType = EditorInfo.TYPE_TEXT_FLAG_AUTO_COMPLETE
+        }
     }
 }

@@ -47,6 +47,8 @@ Sample implementation [here](app/)
 ```kotlin
        val filledBoxSpinner: FilledBoxSpinner = findViewById(R.id.filled_box_spinner)
        filledBoxSpinner.setItems(listItems)
+       filledBoxSpinner.isSearchable(false)
+
 ```
 - Implement `OnItemSelectedListener` 
 ```kotlin

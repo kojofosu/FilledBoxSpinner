@@ -3,6 +3,7 @@
     <declare-styleable name="FilledBoxSpinner">
         <attr name="hint" format="string"/>
         <attr name="icon" format="reference"/>
+        <attr name="isSearchable" format="boolean"/>
         <attr name="iconPosition" format="enum">
             <enum name="start" value="0"/>
             <enum name="end" value="1"/>

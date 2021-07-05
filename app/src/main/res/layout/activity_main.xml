@@ -14,6 +14,7 @@
         android:layout_margin="40dp"
         app:hint="Waveform"
         app:icon="@drawable/ic_baseline_graphic_eq_24"
-        app:iconPosition="start"/>
+        app:iconPosition="start"
+        app:isSearchable="false"/>
 
 </LinearLayout>

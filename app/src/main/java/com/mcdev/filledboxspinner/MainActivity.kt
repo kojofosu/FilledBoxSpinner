@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         val filledBoxSpinner: FilledBoxSpinner = findViewById(R.id.filled_box_spinner)
         filledBoxSpinner.setItems(listItems)
+        filledBoxSpinner.isSearchable(false)
         filledBoxSpinner.setOnItemSelectedListener(object : OnItemSelectedListener {
             override fun onItemSelected(itemValue: String) {
                 if (itemValue == "Tidal wave") {
