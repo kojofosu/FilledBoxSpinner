@@ -49,6 +49,12 @@ class FilledBoxSpinner @JvmOverloads constructor(
             binding.textInputLayout.hint = value
         }
 
+    var isErrorEnabled: Boolean
+        get() = binding.textInputLayout.isErrorEnabled
+        set(value) {
+            binding.textInputLayout.isErrorEnabled = value
+        }
+
     init {
         val attributes = context.theme.obtainStyledAttributes(attributeSet, R.styleable.FilledBoxSpinner, defStyleAttr, defStyleAttr)
         val hint = attributes.getString(R.styleable.FilledBoxSpinner_hint)
