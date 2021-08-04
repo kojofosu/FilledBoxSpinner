@@ -27,6 +27,27 @@ class FilledBoxSpinner @JvmOverloads constructor(
     private var mItemSelected: String? = null
     private var mItemSelectedPosition: Int? = null
     private var mItemSelectedId: Long? = null
+    private var mHint: String? = null
+
+    private var _error: String? = null
+
+    var error: String?
+        get() = _error
+        set(value) {
+            binding.textInputLayout.error = value
+        }
+
+    var selectedItem: String?
+        get() = mItemSelected
+        set(value) {
+            binding.autoCompleteTextView.setText(value)
+        }
+
+    var hint: String?
+        get() = mHint
+        set(value) {
+            binding.textInputLayout.hint = value
+        }
 
     init {
         val attributes = context.theme.obtainStyledAttributes(attributeSet, R.styleable.FilledBoxSpinner, defStyleAttr, defStyleAttr)
@@ -36,7 +57,7 @@ class FilledBoxSpinner @JvmOverloads constructor(
         val searchable = attributes.getBoolean(R.styleable.FilledBoxSpinner_isSearchable, false)
 
         setSpinnerIcon(spinnerIcon, iconPosition)
-        setHint(hint)
+        this.hint = hint
         isSearchable(searchable)
 
         binding.autoCompleteTextView.setOnItemClickListener(object: AdapterView.OnItemClickListener{
@@ -54,10 +75,6 @@ class FilledBoxSpinner @JvmOverloads constructor(
             }
 
         })
-    }
-
-    fun setHint(hint: String?) {
-        binding.textInputLayout.hint = hint
     }
 
     fun setItems(list: List<Any>) {
@@ -84,14 +101,6 @@ class FilledBoxSpinner @JvmOverloads constructor(
 
     fun getSelectedItemPosition(): Int? {
         return mItemSelectedPosition
-    }
-
-    fun getSelectedItem(): String {
-        return mItemSelected!!
-    }
-
-    fun setError(message: String) {
-        binding.textInputLayout.error = message
     }
 
     fun isSearchable(searchable: Boolean) {
